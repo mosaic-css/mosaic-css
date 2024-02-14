@@ -1,0 +1,21 @@
+// buttons mixins
+@mixin button($background-color: black) {
+    color:$white ;
+   background-color: $background-color;
+   padding: 12px 24px;
+   cursor: pointer;
+   text-align: center;
+   text-decoration: none;
+   border: none;
+   border-radius: 10px;
+   text-shadow: none;
+   font-weight: normal;
+   line-height: normal;
+ }
+ .button {
+  @include button($green--bright);
+}
+
+.button--blue {
+  @include button($blue);
+}

@@ -1,0 +1,25 @@
+@mixin MaxWidth($value: 960px) {
+    max-width: $value;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: content-box;
+  }
+  
+@mixin full-width() {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+  
+
+  .container {
+    @include MaxWidth(1200px);
+  }
+  
+  .content {
+    @include full-width();
+  }
+  
+  img {
+    width: 100%;
+  }
+  
