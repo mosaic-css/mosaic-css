@@ -1,0 +1,21 @@
+// Mixin for grid container with dynamic properties
+@mixin grid-container($columns: auto-fill, $min-width: 200px, $max-width: 2fr) {
+    display: grid;
+    grid-template-columns: repeat($columns, minmax($min-width, $max-width));
+    grid-gap: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  // Mixin for grid item with dynamic properties
+  @mixin grid-item( $padding: 10px) {
+    background-color:  #ccc;
+    padding: $padding;
+  }
+  // Usage with customized properties
+.wrapper {
+    @include grid-container(auto-fit, 300px, 1fr);
+  }
+  
+  .item {
+    @include grid-item(20px);
+  }
