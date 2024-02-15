@@ -3,6 +3,6 @@
 @mixin font-styles($font-size, $line-height, $margin-top:15px) {
     font-size: $font-size;
     line-height: $line-height;
-    margin-top: 15px;
+    margin-top: $margin-top;
   }
 
