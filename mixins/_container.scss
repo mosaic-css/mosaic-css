@@ -1,3 +1,13 @@
+// Define mixins 
+@mixin container($max-width:1420, $padding-left:5vw, $padding-right:5vw) {
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $padding-left;
+  padding-right: $padding-right;
+  box-sizing: content-box;
+}
+
 @mixin MaxWidth($value: 960px) {
     max-width: $value;
     margin-left: auto;
@@ -9,17 +19,5 @@
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
   }
-  
 
-  .container {
-    @include MaxWidth(1200px);
-  }
-  
-  .content {
-    @include full-width();
-  }
-  
-  img {
-    width: 100%;
-  }
-  
+ 
