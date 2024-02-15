@@ -2,11 +2,11 @@ const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
-const path = require('path');
+const concat = require('gulp-concat');
 
 // Define paths
 const scssFiles = ['./scss/**/*.scss'];
-const exampleCssFiles = ['./example/**/*.scss'];
+const exampleCssFiles = ['./example/elements/*.scss'];
 const mixinsCssFiles = ['./mixins/**/*.scss'];
 
 // Compile SCSS files
@@ -15,34 +15,22 @@ function compileScss(sourceFiles, destination) {
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
+    .pipe(concat('main.css')) // Concatenate all SCSS files into main.css
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(destination));
 }
 
-// Compile SCSS in the main folder
-function compileMainScss() {
-  return compileScss(scssFiles, './css/');
-}
-
-// Compile SCSS in the example folder
-function compileExampleScss() {
-  return compileScss(exampleCssFiles, './css/');
-}
-
-// Compile SCSS in the mixins folder
-function compileMixinsScss() {
-  return compileScss(mixinsCssFiles, './css/');
-}
-
-// Watch for changes in SCSS files
 function watch() {
-  gulp.watch(scssFiles, compileMainScss);
-  gulp.watch(exampleCssFiles, compileExampleScss);
-  gulp.watch(mixinsCssFiles, compileMixinsScss);
+  gulp.watch(scssFiles, gulp.series(compileMainScss));
+  gulp.watch(exampleCssFiles, gulp.series(compileMainScss));
+  gulp.watch(mixinsCssFiles, gulp.series(compileMainScss));
 }
 
-// Define build task
-const build = gulp.series(gulp.parallel(compileMainScss, compileExampleScss, compileMixinsScss), watch);
+// Compile SCSS files
+function compileMainScss() {
+  return compileScss(scssFiles.concat(exampleCssFiles).concat(mixinsCssFiles), './css/');
+}
 
-// Export tasks
-exports.default = build;
+const build = gulp.series(compileMainScss);
+const defaultTask = gulp.series(build, watch);
+exports.default = defaultTask;
