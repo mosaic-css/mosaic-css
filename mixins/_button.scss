@@ -1,21 +1,28 @@
 // buttons mixins
-@mixin button($background-color: black) {
-    color:$white ;
+@mixin button(
+  $background-color: black,
+   $color:#fff,
+   $padding: 12px 24px,
+   $font-size: 16px,
+   $border-radius: 10px,
+   $box-shadow: inset 0px 0 8px -4px rgb(18, 9, 65),
+   $text-transform: capitalize,
+   $font-weight: normal,
+   $text-align: center,
+   $text-decoration: none,
+   $border: none,
+     ) 
+     {
+   color:$color ;
    background-color: $background-color;
-   padding: 12px 24px;
+   padding:$padding;
    cursor: pointer;
-   text-align: center;
-   text-decoration: none;
-   border: none;
-   border-radius: 10px;
-   text-shadow: none;
-   font-weight: normal;
-   line-height: normal;
+   text-align: $text-align;
+   text-decoration: $text-decoration;
+   border: $border;
+   border-radius: $border-radius;
+   font-weight: $font-weight;
+   text-transform: $text-transform;
+   box-shadow: $box-shadow;
+   font-size: $font-size;
  }
- .button {
-  @include button($green--bright);
-}
-
-.button--blue {
-  @include button($blue);
-}

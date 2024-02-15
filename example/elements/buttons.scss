@@ -1,0 +1,10 @@
+@import '../../mixins/button';  
+
+.button {
+    @include button(#067106,#dfdfec,12px 20px ,14px,5px);
+  }
+  
+  .button--blue {
+    @include button(#0000FF,#7ba9da,10px 15px,20px,10px );
+  }
+  
