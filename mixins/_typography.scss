@@ -1,8 +1,7 @@
 // Define typography mixins
 @import '../example/variables';
-@mixin font-styles($font-size, $line-height, $margin-top:15px) {
+@mixin font-styles($font-size, $line-height) {
     font-size: $font-size;
     line-height: $line-height;
-    margin-top: $margin-top;
   }
 
