@@ -11,6 +11,8 @@
    $text-align: center,
    $text-decoration: none,
    $border: none,
+   $hover-bg-color: lighten($background-color, 10%)
+
      ) 
      {
    color:$color ;
@@ -25,4 +27,7 @@
    text-transform: $text-transform;
    box-shadow: $box-shadow;
    font-size: $font-size;
+   &:hover {
+    background-color: $hover-bg-color;
+  }
  }
