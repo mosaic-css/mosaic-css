@@ -1,9 +1,10 @@
 @import '../../mixins/grid';  
 
 .wrapper {
-    @include grid-container(auto-fit, 300px, 1fr);
+    @include grid-container();
   }
   
   .item {
-    @include grid-item(20px);
+    padding: 20px;
+    background-color: rgb(233, 230, 230);
   }
