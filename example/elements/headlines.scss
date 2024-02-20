@@ -5,3 +5,7 @@
   h1 {
     @include vw-px(font-size, 4, 24); 
   }
+
+p {
+  @include remove-margin;
+}
