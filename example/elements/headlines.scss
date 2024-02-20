@@ -1,39 +1,7 @@
 @import '../../mixins/typography';  
 @import '../variables';
   // Apply typography styles
+
   h1 {
-    @include font-styles($h1-font-size, $base-line-height);
-  }
-  
-  h2 {
-    @include font-styles($h2-font-size, $base-line-height);
-  }
-  
-  h3 {
-    @include font-styles($h3-font-size, $base-line-height);
-  }
-  
-  h4 {
-    @include font-styles($h4-font-size, $base-line-height);
-  }
-  
-  h5 {
-    @include font-styles($h5-font-size, $base-line-height);
-  }
-  
-  h6 {
-    @include font-styles($h6-font-size, $base-line-height);
-  }
-  
-  p {
-    @include font-styles($paragraph-font-size, $base-line-height);
-  }
-  
-  ul, ol {
-    list-style: none;
-  }
-  
-  li {
-    padding: $list-item-padding;
-    margin: $list-item-margin;
+    @include vw-px(font-size, 4, 24); 
   }
