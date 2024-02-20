@@ -1,25 +1,45 @@
-$green: #067106;
-$green--bright: #3ab152;
-$red: #FF0000;
-$white: #ffffff;
-$blue: #0000FF;
-$blue--light: #3333FF;
-// Define typography variables
-$base-font-family: 'Arial', sans-serif;
-$base-font-size: 16px;
-$base-line-height: 1.5;
-
-// Heading styles
-$h1-font-size: 2.5rem;
-$h2-font-size: 2rem;
-$h3-font-size: 1.75rem;
-$h4-font-size: 1.5rem;
-$h5-font-size: 1.25rem;
-$h6-font-size: 1rem;
-
-// Paragraph styles
-$paragraph-font-size: 1rem;
-
-// List styles
-$list-item-padding: 0.5rem 0;
-$list-item-margin: 0;
+$blue--light: #47c7fd;
+$blue: #2189b4;
+$orange: #db6317;
+$orange--light: #ef8331;
+$white : #fff;
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+// Define the default button styles
+$buttons: (
+  default: (
+    background-color: black,
+    color: white,
+    padding: 10px 30px,
+    font-size: inherit,
+    border-radius: 5px,
+    box-shadow: none,
+    text-transform: none,
+    font-weight: bold,
+    text-align: center,
+    text-decoration: none,
+    border: none,
+    hover-bg-color: lighten(black, 10%)
+  ),
+  blue: (
+    background-color: $blue,
+    hover-bg-color: lighten($blue, 10%)
+  ),
+  blue-light: (
+    background-color: $blue--light,
+    hover-bg-color: lighten($blue--light, 10%)
+  ),
+  orange: (
+    background-color: $orange,
+    hover-bg-color: lighten($orange, 10%)
+  ),
+  orange-light: (
+    background-color: $orange--light,
+    hover-bg-color: lighten($orange--light, 10%)
+  )
+);

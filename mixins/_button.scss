@@ -1,33 +1,19 @@
 // buttons mixins
-@mixin button(
-  $background-color: black,
-   $color:#fff,
-   $padding: 12px 24px,
-   $font-size: 16px,
-   $border-radius: 10px,
-   $box-shadow: inset 0px 0 8px -4px rgb(18, 9, 65),
-   $text-transform: capitalize,
-   $font-weight: normal,
-   $text-align: center,
-   $text-decoration: none,
-   $border: none,
-   $hover-bg-color: lighten($background-color, 10%)
-
-     ) 
-     {
-   color:$color ;
-   background-color: $background-color;
-   padding:$padding;
-   cursor: pointer;
-   text-align: $text-align;
-   text-decoration: $text-decoration;
-   border: $border;
-   border-radius: $border-radius;
-   font-weight: $font-weight;
-   text-transform: $text-transform;
-   box-shadow: $box-shadow;
-   font-size: $font-size;
-   &:hover {
-    background-color: $hover-bg-color;
+@import '../example/variables';
+// Define the button mixin
+@mixin button($button-name: default) {
+  @if map-has-key($buttons, $button-name) {
+    $styles: map-get($buttons, $button-name);
+    @each $key, $value in $styles {
+      #{$key}: $value;
+    }
+    // Add hover styles if available
+    $hover-bg-color: map-get($styles, 'hover-bg-color');
+    @if $hover-bg-color {
+      &:hover {
+        background-color: $hover-bg-color;
+      }
+    }
   }
- }
+}
+
