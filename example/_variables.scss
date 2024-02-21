@@ -3,43 +3,27 @@ $blue: #2189b4;
 $orange: #db6317;
 $orange--light: #ef8331;
 $white : #fff;
-$breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
-);
+
+// breakpoints
+$sm: 560px;
+$md: 960px;
+$lg: 1200px;
+
 // Define the default button styles
 $buttons: (
   default: (
     background-color: black,
-    color: white,
-    padding: 10px 30px,
-    font-size: inherit,
-    border-radius: 5px,
-    box-shadow: none,
-    text-transform: none,
-    font-weight: bold,
-    text-align: center,
-    text-decoration: none,
-    border: none,
-    hover-bg-color: lighten(black, 10%)
   ),
   blue: (
     background-color: $blue,
-    hover-bg-color: lighten($blue, 10%)
   ),
   blue-light: (
     background-color: $blue--light,
-    hover-bg-color: lighten($blue--light, 10%)
   ),
   orange: (
     background-color: $orange,
-    hover-bg-color: lighten($orange, 10%)
   ),
   orange-light: (
     background-color: $orange--light,
-    hover-bg-color: lighten($orange--light, 10%)
   )
 );
