@@ -1,20 +1,4 @@
 @import '../../mixins/button'; 
-.button {
-  @include button(); 
-}
 
-.button--blue-light {
-  @include button(blue-light); 
-}
+@include generate-button-classes();
 
-.button--blue {
-  @include button(blue); 
-}
-
-.button--orange {
-  @include button(orange); 
-}
-
-.button--orange-light {
-  @include button(orange-light); 
-}

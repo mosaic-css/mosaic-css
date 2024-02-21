@@ -1,19 +1,28 @@
 // buttons mixins
 @import '../example/variables';
-// Define the button mixin
-@mixin button($button-name: default) {
-  @if map-has-key($buttons, $button-name) {
-    $styles: map-get($buttons, $button-name);
-    @each $key, $value in $styles {
-      #{$key}: $value;
-    }
-    // Add hover styles if available
-    $hover-bg-color: map-get($styles, 'hover-bg-color');
-    @if $hover-bg-color {
+
+@mixin generate-button-classes {
+  @each $button-name, $button-properties in $buttons {
+    .button--#{$button-name} {
+      color: white;
+      padding: 10px 30px;
+      font-size: inherit;
+      border-radius: 5px;
+      box-shadow: none;
+      text-transform: none;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      
+      @each $property, $value in $button-properties {
+        #{$property}: $value;
+      }
+
       &:hover {
-        background-color: $hover-bg-color;
+        background-color: lighten(map-get($button-properties, 'background-color'), 10%);
+        cursor: pointer;
       }
     }
   }
 }
-
