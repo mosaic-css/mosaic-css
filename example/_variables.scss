@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $blue--light: #47c7fd;
 $blue: #2189b4;
 $orange: #db6317;
@@ -10,20 +12,42 @@ $md: 960px;
 $lg: 1200px;
 
 // Define the default button styles
-$buttons: (
-  default: (
+$default-buttons: (
+  '.default': (
     background-color: black,
-  ),
-  blue: (
-    background-color: $blue,
-  ),
-  blue-light: (
-    background-color: $blue--light,
-  ),
-  orange: (
-    background-color: $orange,
-  ),
-  orange-light: (
-    background-color: $orange--light,
+    color:#fff,
+    padding: 12px 24px,
+    font-size: 16px,
+    border-radius: 10px,
+    box-shadow: inset 0px 0 8px -4px rgb(18, 9, 65),
+    text-transform: capitalize,
+    font-weight: normal,
+    text-align: center,
+    text-decoration: none,
+    border: none,
   )
+);
+
+$custom-buttons: (
+  '.default': (
+    background-color: rgb(4, 80, 10), 
+    color: rgb(245, 245, 238), 
+  ),
+  '.green': (
+    background-color: rgb(4, 80, 10), 
+    color: rgb(245, 245, 238), 
+  ),
+);
+@debug 
+map.set(
+    $default-buttons,
+    '.default',
+    map.merge(
+        map.get($default-buttons,'.default'),
+        map.get($custom-buttons, '.default')
+    )
+);
+$buttons: map.merge(
+    $default-buttons,
+    $custom-buttons
 );
