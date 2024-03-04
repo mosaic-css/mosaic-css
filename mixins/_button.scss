@@ -1,11 +1,19 @@
 // buttons mixins
-@import '../example/variables';
+@import '../variables';
 
 @mixin generate-button-classes {
-  @each $button-name, $button-properties in $buttons {
-    #{$button-name} {
-      @each $property, $value in $button-properties {
-        #{$property}: $value;
+  @each $button, $styles in $buttons {
+    #{$button} {
+      @each $property, $value in $styles {
+        @if $property == hover {
+          &:hover {
+            @each $hover-property, $hover-value in $value {
+              #{$hover-property}: $hover-value;
+            }
+          }
+        } @else {
+          #{$property}: $value;
+        }
       }
     }
   }

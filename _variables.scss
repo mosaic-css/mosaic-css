@@ -1,3 +1,7 @@
+// // breakpoints
+$sm: 560px;
+$md: 960px;
+$lg: 1200px;
 $breakpoints: (
   sm: '560px',
   md: '960px',
@@ -19,23 +23,28 @@ $buttons: (
     text-align: center,
     text-decoration: none,
     border: none,
-    hover: (  /** special treatment in mixin **/
-      background-color: white,
-      color: black,
+    hover: (  // Nested map for hover styles
+      background-color: rgb(88, 135, 237),
+      color: rgb(226, 240, 240),
     )
   ),
   '.button--primary': (
     background-color: green,
+    hover: (  // Nested map for hover styles
+    background-color: rgb(153, 240, 53),
+    color: rgb(194, 231, 231),
+  )
   )
 )!default;
 
+// Define global variables
 $container: (
   '.container': (
-    max-width: '1420px',
+    max-width: 1420px,
     mobile-horizontal-padding: 5vw
   ),
   '.container--narrow': (
-    max-width: '960px',
+    max-width: 960px,
   )
 )!default;
 
