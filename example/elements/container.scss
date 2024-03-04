@@ -1,11 +1,17 @@
 @import '../../mixins/container';  
 
 .container {
-    @include container(960,6vw,6vw);
-  }
-.content {
-    @include full-width();
-  }
+  @include container('.container');
+}
+
+.container--narrow {
+  @include container('.container--narrow');
+}
+
+.full-width-element {
+  @include full-width;
+}
+
   
   img {
     width: 100%;

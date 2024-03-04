@@ -1,23 +1,15 @@
-// Define mixins 
-@mixin container($max-width:1420, $padding-left:5vw, $padding-right:5vw) {
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: $padding-left;
-  padding-right: $padding-right;
+@import '../variables';
+// Define mixins using global variables
+@mixin container($selector) {
+  $container-properties: map-get($container, $selector);
+  max-width: map-get($container-properties, 'max-width');
+  margin: 0 auto;
+  padding-left: map-get($container-properties, 'mobile-horizontal-padding');
+  padding-right: map-get($container-properties, 'mobile-horizontal-padding');
   box-sizing: content-box;
 }
 
-@mixin MaxWidth($value: 960px) {
-    max-width: $value;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: content-box;
-  }
-  
 @mixin full-width() {
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-  }
-
- 
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
