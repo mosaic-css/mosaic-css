@@ -1,0 +1,61 @@
+$breakpoints: (
+  sm: '560px',
+  md: '960px',
+  lg: '1200px',
+  xl: '1440px',
+  xxl: '1920px',
+);
+
+$buttons: (
+  '.button': (
+    background-color: black,
+    color: white,
+    padding: 12px 24px,
+    font-size: 1rem,
+    border-radius: 10px,
+    box-shadow: none,
+    text-transform: normal,
+    font-weight: normal,
+    text-align: center,
+    text-decoration: none,
+    border: none,
+    hover: (  /** special treatment in mixin **/
+      background-color: white,
+      color: black,
+    )
+  ),
+  '.button--primary': (
+    background-color: green,
+  )
+)!default;
+
+$container: (
+  '.container': (
+    max-width: '1420px',
+    mobile-horizontal-padding: 5vw
+  ),
+  '.container--narrow': (
+    max-width: '960px',
+  )
+)!default;
+
+$grid: (  /** mixin still needed to turn trhis into css **/
+  '.grid': (
+    cols: 2,
+    gap: 5vw,
+    lg: (
+      cols: 3,
+    ),
+    xl: (
+      cols: 4,
+    )
+  ),
+  '.grid--twocol': (
+    lg: (
+      cols: 2,
+    ),
+    xl: (
+      cols: 2,
+    )
+  )
+)!default;
