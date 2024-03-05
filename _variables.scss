@@ -1,7 +1,5 @@
-// // breakpoints
-$sm: 560px;
-$md: 960px;
-$lg: 1200px;
+// breakpoints
+
 $breakpoints: (
   sm: '560px',
   md: '960px',
@@ -48,10 +46,13 @@ $container: (
   )
 )!default;
 
-$grid: (  /** mixin still needed to turn trhis into css **/
+$grid: (
   '.grid': (
-    cols: 2,
+    cols: 1,
     gap: 5vw,
+    md: (
+      cols: 2,
+    ),
     lg: (
       cols: 3,
     ),
@@ -60,11 +61,10 @@ $grid: (  /** mixin still needed to turn trhis into css **/
     )
   ),
   '.grid--twocol': (
+    cols: 2, // Define the number of columns for the default state
     lg: (
       cols: 2,
     ),
-    xl: (
-      cols: 2,
-    )
+    
   )
-)!default;
+) !default;

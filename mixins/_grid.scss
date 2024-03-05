@@ -1,8 +1,23 @@
-// grid
-@mixin gridproperties($columns) {
-  display: grid;
-  grid-template-columns: repeat($columns, 1fr);
-  grid-template-rows: auto;
-  gap: 10px;
-  padding: 10px 0;
+@import '../variables';
+// Mixin to generate grid properties
+@mixin generateGrid {
+  @each $selector, $props in $grid {
+    #{$selector} {
+      display: grid;
+      grid-template-columns: repeat(map-get($props, cols), 1fr);
+      grid-template-rows: auto;
+      gap: map-get($props, gap);
+      padding: 10px 0;
+
+      @each $breakpoint, $value in $props {
+        @if $breakpoint != cols and $breakpoint != gap {
+          @media only screen and (min-width: #{map-get($breakpoints, $breakpoint)}) {
+            display: grid;
+            grid-template-columns: repeat(map-get($value, cols), 1fr);
+            gap: map-get($value, gap);
+          }
+        }
+      }
+    }
+  }
 }

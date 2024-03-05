@@ -1,18 +1,4 @@
 @import '../../mixins/grid';
 @import '../variables';
 
-.grid {
-  @include gridproperties(1);
-
-  @media only screen and (min-width: $sm) {
-    @include gridproperties(2);
-  }
-
-  @media only screen and (min-width: $md) {
-    @include gridproperties(3);
-  }
-
-  @media only screen and (min-width: $lg) {
-    @include gridproperties(4);
-  }
-}
+@include generateGrid;
