@@ -1,12 +1,16 @@
 @import '../variables';
 // Define mixins using global variables
-@mixin container($selector) {
-  $container-properties: map-get($container, $selector);
-  max-width: map-get($container-properties, 'max-width');
-  margin: 0 auto;
-  padding-left: map-get($container-properties, 'mobile-horizontal-padding');
-  padding-right: map-get($container-properties, 'mobile-horizontal-padding');
-  box-sizing: content-box;
+// Define mixin to generate container styles
+@mixin generate-containers {
+  @each $class, $properties in $container {
+    #{$class} {
+      max-width: map-get($properties, 'max-width');
+      margin: 0 auto;
+      padding-left: map-get($properties, 'mobile-horizontal-padding');
+      padding-right: map-get($properties, 'mobile-horizontal-padding');
+      box-sizing: content-box;
+    }
+  }
 }
 
 @mixin full-width() {

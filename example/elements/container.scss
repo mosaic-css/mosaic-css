@@ -1,12 +1,7 @@
 @import '../../mixins/container';  
 
-.container {
-  @include container('.container');
-}
+@include generate-containers;
 
-.container--narrow {
-  @include container('.container--narrow');
-}
 
 .full-width-element {
   @include full-width;
