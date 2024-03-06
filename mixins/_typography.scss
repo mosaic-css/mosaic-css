@@ -1,14 +1,15 @@
 // Define typography mixins
-@import '../example/variables';
+@use "sass:math";
 
-// Define the vw-px mixin
+@import '../variables';
+
 @mixin vw-px($property, $vw, $px) {
-  $breakpoint: calc(100 * #{$px} / #{$vw});
+  $breakpoint: math.div(100 * $px, $vw);
 
   #{$property}: #{$vw}vw;
 
   @media (min-width: #{$breakpoint}px) {
-    #{$property}: calc(100 * #{$px} / #{$vw});
+    #{$property}: #{$px}px;
   }
 }
 // Define the main mixin for font styles with responsive font-size using vw and px
