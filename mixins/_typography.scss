@@ -1,11 +1,9 @@
 // Define typography mixins
-@use "sass:math";
 
 @import '../variables';
 
 @mixin vw-px($property, $vw, $px) {
-  $breakpoint: math.div(100 * $px, $vw);
-
+  $breakpoint: round(calc(100 * $px / $vw));
   #{$property}: #{$vw}vw;
 
   @media (min-width: #{$breakpoint}px) {
