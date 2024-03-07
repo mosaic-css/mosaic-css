@@ -9,3 +9,14 @@
 p {
   @include remove-margin;
 }
+h1 + p {
+  @include margin-top(h1, p);
+}
+p + h2 {
+  @include margin-top(p, h2);
+}
+
+p{
+  @include margin-top(p, p);
+
+}

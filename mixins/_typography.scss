@@ -29,6 +29,11 @@
     );
   }
 }
+// Mixin to apply margin-top between elements
+@mixin margin-top($from, $to) {
+  $key: if($to == 'p', $to, $from + ' + ' + $to);
+  margin-top: map-get($margin-top-matrix, $key);
+}
 // remove margn
 @mixin remove-margin {
   &:last-child {
