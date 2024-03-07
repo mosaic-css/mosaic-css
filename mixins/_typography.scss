@@ -12,10 +12,22 @@
 }
 // Define the main mixin for font styles with responsive font-size using vw and px
 @mixin font-styles($font-size, $line-height:1.4, $font-family:inherit, $font-weight:normal) {
-  @include vw-px(font-size, $font-size-px, $font-size-vw); 
+  font-size:$font-size;
   line-height: $line-height;
   font-family: $font-family;
   font-weight: $font-weight;
+}
+
+// Apply typography styles using global variables
+@each $style, $properties in $typography {
+  #{$style} {
+    @include font-styles(
+      map-get($properties, font-size),
+      map-get($properties, line-height),
+      map-get($properties, font-family),
+      map-get($properties, font-weight)
+    );
+  }
 }
 // remove margn
 @mixin remove-margin {
