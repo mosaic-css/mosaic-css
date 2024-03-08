@@ -120,7 +120,7 @@ $typography: (
 );
 // Define a map to store margin-top values between elements
 $margin-top-matrix: (
-  p: 1em,      // Default margin-top for paragraphs
+  '* + p': 1em,      // Default margin-top for paragraphs
   'p + h1': 0.5em,
   'p + h2': 0.4em,
   'p + h3': 0.3em,

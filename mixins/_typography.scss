@@ -30,10 +30,14 @@
   }
 }
 // Mixin to apply margin-top between elements
-@mixin margin-top($from, $to) {
-  $key: if($to == 'p', $to, $from + ' + ' + $to);
-  margin-top: map-get($margin-top-matrix, $key);
+@mixin generate-margin-top-classes {
+  @each $element, $value in $margin-top-matrix {
+    #{$element} {
+      margin-top: $value;
+    }
+  }
 }
+
 // remove margn
 @mixin remove-margin {
   &:last-child {
