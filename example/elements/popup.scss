@@ -1,0 +1,17 @@
+@import "mixins/popup";
+/* Adjust popup container styles */
+.popup {
+  @include popup-container;
+  
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #666;
+  }

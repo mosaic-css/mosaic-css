@@ -128,3 +128,11 @@ $margin-top-matrix: (
   'h2 + p': 2em,
   'h3 + p': 2em
 );
+// Define global variables for popup properties
+$popup-max-width: 80%; 
+$popup-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+$popup-animation-duration: 0.3s; 
+$popup-width: 500px;
+$popup-height: 300px;
+$popup-background-color: #000;
+$popup-color:#fefefe;

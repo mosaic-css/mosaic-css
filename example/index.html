@@ -6,7 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Page Title</title>
   <link rel="stylesheet" href="../css/main.css">
-
+  <style>
+    /* Additional styles for testing purposes */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .popup {
+      display: none; /* Initially hide the popup */
+    }
+    .show-popup {
+      display: block; /* Show the popup when this class is applied */
+    }
+  </style>
 </head>
 
 <body>
@@ -44,26 +55,7 @@
         <img src="http://2.bp.blogspot.com/-p5rS3RVVUWA/UP12HDyN-JI/AAAAAAAAAEk/Mro7nvwOEv4/s1600/couverture-facebook-plage.jpg"
             alt="">
     </div>
-    <div class="my-images">
-        <img src="http://2.bp.blogspot.com/-p5rS3RVVUWA/UP12HDyN-JI/AAAAAAAAAEk/Mro7nvwOEv4/s1600/couverture-facebook-plage.jpg"
-            alt="">
-    </div>
-    <div class="my-images">
-        <img src="http://2.bp.blogspot.com/-p5rS3RVVUWA/UP12HDyN-JI/AAAAAAAAAEk/Mro7nvwOEv4/s1600/couverture-facebook-plage.jpg"
-            alt="">
-    </div>
-    <div class="my-images">
-        <img src="http://2.bp.blogspot.com/-p5rS3RVVUWA/UP12HDyN-JI/AAAAAAAAAEk/Mro7nvwOEv4/s1600/couverture-facebook-plage.jpg"
-            alt="">
-    </div>
-    <div class="my-images">
-        <img src="http://2.bp.blogspot.com/-p5rS3RVVUWA/UP12HDyN-JI/AAAAAAAAAEk/Mro7nvwOEv4/s1600/couverture-facebook-plage.jpg"
-            alt="">
-    </div>
-    <div class="my-images">
-        <img src="http://2.bp.blogspot.com/-p5rS3RVVUWA/UP12HDyN-JI/AAAAAAAAAEk/Mro7nvwOEv4/s1600/couverture-facebook-plage.jpg"
-            alt="">
-    </div>
+
     <div class="my-images">
         <img src="http://2.bp.blogspot.com/-p5rS3RVVUWA/UP12HDyN-JI/AAAAAAAAAEk/Mro7nvwOEv4/s1600/couverture-facebook-plage.jpg"
             alt="">
@@ -80,7 +72,21 @@
   <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium aut, sint iure illo tempore modi
     natus, voluptates sed culpa
     libero architecto dolores? Suscipit cum maxime sunt hic est rem dignissimos.</p>
+    <button onclick="togglePopup()">Toggle Popup</button> <!-- Button to toggle the popup -->
 
+    <div class="popup" id="popup"> <!-- Popup container -->
+      <button class="close-btn" onclick="togglePopup()">X</button> <!-- Close button -->
+      <p>This is a popup!</p>
+    </div>
+    
+  
+    <script>
+function togglePopup() {
+  var popup = document.getElementById('popup');
+  popup.classList.toggle('show-popup'); // Toggle the 'show-popup' 
+}
+
+    </script>
 </body>
 
 </html>

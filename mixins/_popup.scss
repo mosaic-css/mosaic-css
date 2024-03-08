@@ -1,0 +1,37 @@
+@import "../variables";
+// Define mixins for popup styles
+@mixin popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $popup-background-color;
+  color:$popup-color;
+  box-shadow: $popup-box-shadow;
+  max-width: $popup-max-width;
+  width: $popup-width;
+  height: $popup-height;
+  margin: 0;
+  overflow: auto;
+  z-index: 9999; /* Ensure it's above other content */
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+}
+
+
+
+@mixin popup-animation {
+  animation: fade-in $popup-animation-duration ease-in-out forwards;
+}
+
+// Define keyframes for animation
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
